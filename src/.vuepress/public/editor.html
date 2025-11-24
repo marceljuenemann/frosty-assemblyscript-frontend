@@ -848,13 +848,33 @@
 
         const stdout = asc.createMemoryStream()
         const sources = {
-          'module.ts': sourceEditor.getValue()
+          'module.ts': sourceEditor.getValue(),
+          'frosty/fib.ts': `
+              export function fib(n: i32): i32 {
+                var a = 0, b = 1
+                if (n > 0) {
+                  while (--n) {
+                    let t = a + b
+                    a = b
+                    b = t
+                  }
+                  return b
+                }
+                return a
+              }
+          `
         }
         const outputs = {}
         const config = {
           stdout,
           stderr: stdout,
-          readFile: name => Object.prototype.hasOwnProperty.call(sources, name) ? sources[name] : null,
+          readFile: (name, basedir) => {
+            console.log('readFile', { name, basedir });
+            if (Object.prototype.hasOwnProperty.call(sources, name)) {
+              return sources[name]
+            }
+            return null
+          },
           writeFile: (name, contents) => { outputs[name] = contents },
           listFiles: () => []
         }
