@@ -558,6 +558,17 @@
         model: htmlModel
       }))
 
+      editor.createModel(
+        `declare module "frosty/fib" {
+          /** Calculate the n-th Fibonacci number. */
+          export function fib2(n: i32): i32;
+        }`,
+        'typescript',
+        monaco.Uri.file('/frosty.d.ts'),
+      );
+
+
+
       // Intercept scroll event when focused
       window.addEventListener('wheel', evt => {
         if (document.hasFocus()) {
@@ -849,8 +860,8 @@
         const stdout = asc.createMemoryStream()
         const sources = {
           'module.ts': sourceEditor.getValue(),
-          'frosty/fib.ts': `
-              export function fib(n: i32): i32 {
+          'node_modules/frosty/fib.ts': `
+              export function fib2(n: i32): i32 {
                 var a = 0, b = 1
                 if (n > 0) {
                   while (--n) {
