@@ -1,9 +1,9 @@
 {
-  "name": "@assemblyscript/website",
+  "name": "@frosty/frontend",
   "private": true,
   "version": "0.0.0",
   "license": "Apache-2.0",
-  "description": "AssemblyScript's Website.",
+  "description": "Frosty Functions Frontend",
   "scripts": {
     "start": "vuepress dev src --host localhost --no-cache",
     "build": "vuepress build src",

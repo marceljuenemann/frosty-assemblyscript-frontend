@@ -1,3 +1,13 @@
+Frosty Functions Frontend
+========================
+
+For now this is just a fork of AssemblyScript's site, as I really like it and it
+comes with a neat editor. Most likely it will be replaced with a new frontend
+written from scratch and running on ICP at some point.
+
+Original docs below:
+
+
 AssemblyScript's Website
 ========================
 
