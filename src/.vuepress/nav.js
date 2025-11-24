@@ -1,22 +1,5 @@
 module.exports = [
   {
-    text: 'Documentation',
-    link: '/introduction.md'
-  },
-  {
-    text: 'Examples',
-    items: [
-      {
-        text: 'Overview',
-        link: '/examples'
-      },
-      {
-        text: 'Built with AssemblyScript',
-        link: '/built-with-assemblyscript'
-      }
-    ]
-  },
-  {
     text: 'Community',
     items: [
       {
